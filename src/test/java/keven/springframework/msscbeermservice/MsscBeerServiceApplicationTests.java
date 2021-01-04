@@ -1,4 +1,4 @@
-package keven.springframework.msscbeermservice.msscbeerservice;
+package keven.springframework.msscbeermservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
