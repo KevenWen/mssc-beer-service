@@ -1,5 +1,7 @@
 package keven.springframework.msscbeermservice.web.mode;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,6 +22,8 @@ import java.util.UUID;
 @Builder
 public class BeerDto {
 
+
+    @JsonProperty("beerId")
     @Null
     private UUID id;
 
@@ -27,9 +31,11 @@ public class BeerDto {
     private Integer version;
 
     @Null
+    @JsonFormat(pattern="yyyy-MM-dd'T'HH:mm:ssZ")
     private OffsetDateTime createdDate;
 
     @Null
+    @JsonFormat(pattern="yyyy-MM-dd'T'HH:mm:ssZ")
     private OffsetDateTime lastModifiedDated;
 
     @NotBlank
@@ -44,6 +50,7 @@ public class BeerDto {
 
     @Positive
     @NotNull
+    @JsonFormat(shape = JsonFormat.Shape.STRING)
     private BigDecimal price;
 
     private Integer quantityOnHand;
