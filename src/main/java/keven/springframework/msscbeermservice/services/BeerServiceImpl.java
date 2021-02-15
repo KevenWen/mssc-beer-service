@@ -13,7 +13,7 @@ import java.util.UUID;
  * @author MikeWen
  * @date 2/15/2021 11:57 AM
  **/
-@Service
+@Service("beerService")
 @RequiredArgsConstructor
 public class BeerServiceImpl implements BeerService {
 

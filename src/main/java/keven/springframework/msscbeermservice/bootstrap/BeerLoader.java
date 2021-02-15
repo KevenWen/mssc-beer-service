@@ -14,9 +14,9 @@ import java.math.BigDecimal;
 @Component
 public class BeerLoader implements CommandLineRunner {
 
-    public static final Long BEER_1_UPC = 1063123436L;
-    public static final Long BEER_2_UPC = 1063123419L;
-    public static final Long BEER_3_UPC = 1008378313L;
+    public static final String BEER_1_UPC = "1063123436";
+    public static final String BEER_2_UPC = "1063123419";
+    public static final String BEER_3_UPC = "1008378313";
 
 //    public static final UUID BEER_1_UUID = UUID.fromString("0a818933-087d-47f2-ad83-2f986ed087eb");
 //    public static final UUID BEER_2_UUID = UUID.fromString("a712d914-61ea-4623-8bd0-32c0f6545bfd");

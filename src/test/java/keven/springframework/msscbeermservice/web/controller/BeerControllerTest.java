@@ -1,12 +1,14 @@
 package keven.springframework.msscbeermservice.web.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import keven.springframework.msscbeermservice.services.BeerService;
 import keven.springframework.msscbeermservice.web.mode.BeerDto;
 import keven.springframework.msscbeermservice.web.mode.BeerStyleEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -27,11 +29,11 @@ class BeerControllerTest {
     @Autowired
     ObjectMapper objectMapper;
 
-//    @MockBean
-//    BeerService beerService;
+    @MockBean
+    BeerService beerService;
 
     @Test
-    void getBeerByid() throws Exception {
+    void getBeerById() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/beer/" + UUID.randomUUID().toString()).accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
                 //.andDo();
@@ -54,7 +56,7 @@ class BeerControllerTest {
                 .createdDate(OffsetDateTime.now())
                 .lastModifiedDated(OffsetDateTime.now())
                 .price(new BigDecimal("12.99"))
-                .upc(12341234112L)
+                .upc("12341234112")
                 .build();
 
     }
